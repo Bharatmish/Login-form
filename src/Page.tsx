@@ -6,21 +6,7 @@ interface FormSectionProps {
   onPrev: () => void;
   onSubmit: (data: any) => void;
   isFirst: boolean;
-  isLast: boolean;
-}
 
-function FormSection({
-  section,
-  onNext,
-  onPrev,
-  onSubmit,
-  isFirst,
-  isLast,
-}: FormSectionProps) {
-  const [fields, setFields] = useState<any>(
-    section.fields.reduce((acc: any, field: any) => {
-      acc[field.fieldId] = field.type === "checkbox" ? [] : "";
-      return acc;
     }, {})
   );
   const [errors, setErrors] = useState<any>({});
